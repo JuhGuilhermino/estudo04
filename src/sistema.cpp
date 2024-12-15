@@ -21,7 +21,7 @@ void Sistema::process_events(){
             std::cin >> preco;
         }
     } else if (estado == estados::MENU){
-        std::cout << "\nDigite:\n 0 - Adicionar itens ao pedido.\n 1 - Finalizar pedido. \n 2 - Cancelar pedido. \n>>>    ";
+        std::cout << "\nDigite:\n 0 - Adicionar itens ao pedido.\n 1 - Finalizar pedido. \n 2 - Cancelar pedido. \n 3 - Sair\n>>>    ";
         std::cin >> operacao;
     } else if (estado == estados::COMPRAR){
         std::cout << "\nDigite o ID do produto que deseja adcionar ao pedido >>>    ";
@@ -29,6 +29,10 @@ void Sistema::process_events(){
 
     } else if (estado == estados::FINALIZAR){
         std::cout << "Digite:\n 0 - Para finalizar compra.\n 1 - Continuar comprando \n>>>    ";
+        std::cin >> comprar;
+
+    } else if (estado == estados::CANCELAR){
+        std::cout << "Digite:\n 0 - Para cancelar a compra.\n 1 - Continuar comprando \n>>>    ";
         std::cin >> comprar;
 
     } else if (estado == estados::SAIR){
@@ -59,6 +63,7 @@ void Sistema::update(){
             qtd_novos_produtos++;
 
         } else {
+            atualizar = true;
             estado = estados::MENU;
         }
 
@@ -71,11 +76,13 @@ void Sistema::update(){
             estado = estados::FINALIZAR;
             
         } else if (operacao == 2){
-            //estado = estados::CANCELAR;
-            std::cout << "Cancelar \n";
+            estado = estados::CANCELAR;
+            
+        } else if (operacao == 3){
             estado = estados::SAIR;
-        } 
-
+            
+        }
+ 
     } else if (estado == estados::COMPRAR){
         // Adiciona produto ao pedido
         pedido.adicionar_produto(catalogo.buscar_produto(id_produto));
@@ -87,6 +94,21 @@ void Sistema::update(){
         if (comprar == 0) {
             // Exibe mensagem de compra
             std::cout << "Compra realizada com sucesso! \n";
+
+            // Limpa vetor de pedidos
+            pedido.limpar_produtos();
+
+            // Muda o estado para MENU
+            estado = estados::MENU;
+
+        } else if (comprar == 1) {
+            estado = estados::COMPRAR;
+        }
+
+    } else if (estado == estados::CANCELAR){
+        if (comprar == 0) {
+            // Exibe mensagem de compra
+            std::cout << "Compra cancelada! \n";
 
             // Limpa vetor de pedidos
             pedido.limpar_produtos();
@@ -146,6 +168,9 @@ void Sistema::render(){
         } else {
             std::cout << " 0.0\n";
         }
+
+    } else if (estado == estados::CANCELAR){
+        std::cout << "---------------------------------------------------------------------------------\n";
 
     } else if (estado == estados::SAIR){
         // Não faz nada
