@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /mnt/c/Users/juhgu/Code/Boas_Praticas/estudo04/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -129,12 +139,26 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+#=============================================================================
+# Target rules for targets named tests
+
+# Build rule for target.
+tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests
+.PHONY : tests
+
+# fast build rule for target.
+tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
+.PHONY : tests/fast
+
 src/catalogo.o: src/catalogo.cpp.o
 .PHONY : src/catalogo.o
 
 # target to build an object file
 src/catalogo.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/catalogo.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/catalogo.cpp.o
 .PHONY : src/catalogo.cpp.o
 
 src/catalogo.i: src/catalogo.cpp.i
@@ -143,6 +167,7 @@ src/catalogo.i: src/catalogo.cpp.i
 # target to preprocess a source file
 src/catalogo.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/catalogo.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/catalogo.cpp.i
 .PHONY : src/catalogo.cpp.i
 
 src/catalogo.s: src/catalogo.cpp.s
@@ -151,6 +176,7 @@ src/catalogo.s: src/catalogo.cpp.s
 # target to generate assembly for a file
 src/catalogo.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/catalogo.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/catalogo.cpp.s
 .PHONY : src/catalogo.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -183,6 +209,7 @@ src/pedido.o: src/pedido.cpp.o
 # target to build an object file
 src/pedido.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/pedido.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/pedido.cpp.o
 .PHONY : src/pedido.cpp.o
 
 src/pedido.i: src/pedido.cpp.i
@@ -191,6 +218,7 @@ src/pedido.i: src/pedido.cpp.i
 # target to preprocess a source file
 src/pedido.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/pedido.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/pedido.cpp.i
 .PHONY : src/pedido.cpp.i
 
 src/pedido.s: src/pedido.cpp.s
@@ -199,6 +227,7 @@ src/pedido.s: src/pedido.cpp.s
 # target to generate assembly for a file
 src/pedido.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/pedido.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/pedido.cpp.s
 .PHONY : src/pedido.cpp.s
 
 src/produto.o: src/produto.cpp.o
@@ -207,6 +236,7 @@ src/produto.o: src/produto.cpp.o
 # target to build an object file
 src/produto.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/produto.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/produto.cpp.o
 .PHONY : src/produto.cpp.o
 
 src/produto.i: src/produto.cpp.i
@@ -215,6 +245,7 @@ src/produto.i: src/produto.cpp.i
 # target to preprocess a source file
 src/produto.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/produto.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/produto.cpp.i
 .PHONY : src/produto.cpp.i
 
 src/produto.s: src/produto.cpp.s
@@ -223,6 +254,7 @@ src/produto.s: src/produto.cpp.s
 # target to generate assembly for a file
 src/produto.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/produto.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/produto.cpp.s
 .PHONY : src/produto.cpp.s
 
 src/sistema.o: src/sistema.cpp.o
@@ -249,6 +281,30 @@ src/sistema.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/sistema.cpp.s
 .PHONY : src/sistema.cpp.s
 
+tests/tests.o: tests/tests.cpp.o
+.PHONY : tests/tests.o
+
+# target to build an object file
+tests/tests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/tests.cpp.o
+.PHONY : tests/tests.cpp.o
+
+tests/tests.i: tests/tests.cpp.i
+.PHONY : tests/tests.i
+
+# target to preprocess a source file
+tests/tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/tests.cpp.i
+.PHONY : tests/tests.cpp.i
+
+tests/tests.s: tests/tests.cpp.s
+.PHONY : tests/tests.s
+
+# target to generate assembly for a file
+tests/tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/tests.cpp.s
+.PHONY : tests/tests.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -257,7 +313,9 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... main"
+	@echo "... tests"
 	@echo "... src/catalogo.o"
 	@echo "... src/catalogo.i"
 	@echo "... src/catalogo.s"
@@ -273,6 +331,9 @@ help:
 	@echo "... src/sistema.o"
 	@echo "... src/sistema.i"
 	@echo "... src/sistema.s"
+	@echo "... tests/tests.o"
+	@echo "... tests/tests.i"
+	@echo "... tests/tests.s"
 .PHONY : help
 
 

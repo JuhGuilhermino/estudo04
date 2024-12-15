@@ -13,10 +13,15 @@ void Pedido::listar_produtos(){
 }
 
 float Pedido::calcular_total(){
-    float total = 0;
+    // Soma dos preços dos produtos
     for (int i = 0; i < produtos.size(); i++){
         total += produtos[i].Produto::get_preco();
     }
+
+    if (total > 100){
+        total = (90*total)/100;
+    }
+
     return total;
 }
 

@@ -20,7 +20,8 @@
 class Pedido{
     private:
         std::vector <Produto> produtos;  //> Carrinho de compras
-        std::string nome;            //> Nome do cliente.
+        std::string nome;                //> Nome do cliente.
+        float total = 0;
 
     public:
         /**
@@ -61,6 +62,8 @@ class Pedido{
          * 
          */
         void limpar_produtos();
+
+        float aplicar_desconto();
 };
 
 #endif
