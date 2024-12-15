@@ -263,6 +263,7 @@ src/sistema.o: src/sistema.cpp.o
 # target to build an object file
 src/sistema.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/sistema.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/sistema.cpp.o
 .PHONY : src/sistema.cpp.o
 
 src/sistema.i: src/sistema.cpp.i
@@ -271,6 +272,7 @@ src/sistema.i: src/sistema.cpp.i
 # target to preprocess a source file
 src/sistema.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/sistema.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/sistema.cpp.i
 .PHONY : src/sistema.cpp.i
 
 src/sistema.s: src/sistema.cpp.s
@@ -279,6 +281,7 @@ src/sistema.s: src/sistema.cpp.s
 # target to generate assembly for a file
 src/sistema.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/sistema.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/sistema.cpp.s
 .PHONY : src/sistema.cpp.s
 
 tests/tests.o: tests/tests.cpp.o

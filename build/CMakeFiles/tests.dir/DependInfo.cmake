@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/mnt/c/Users/juhgu/Code/Boas_Praticas/estudo04/src/catalogo.cpp" "CMakeFiles/tests.dir/src/catalogo.cpp.o" "gcc" "CMakeFiles/tests.dir/src/catalogo.cpp.o.d"
   "/mnt/c/Users/juhgu/Code/Boas_Praticas/estudo04/src/pedido.cpp" "CMakeFiles/tests.dir/src/pedido.cpp.o" "gcc" "CMakeFiles/tests.dir/src/pedido.cpp.o.d"
   "/mnt/c/Users/juhgu/Code/Boas_Praticas/estudo04/src/produto.cpp" "CMakeFiles/tests.dir/src/produto.cpp.o" "gcc" "CMakeFiles/tests.dir/src/produto.cpp.o.d"
+  "/mnt/c/Users/juhgu/Code/Boas_Praticas/estudo04/src/sistema.cpp" "CMakeFiles/tests.dir/src/sistema.cpp.o" "gcc" "CMakeFiles/tests.dir/src/sistema.cpp.o.d"
   "/mnt/c/Users/juhgu/Code/Boas_Praticas/estudo04/tests/tests.cpp" "CMakeFiles/tests.dir/tests/tests.cpp.o" "gcc" "CMakeFiles/tests.dir/tests/tests.cpp.o.d"
   )
 

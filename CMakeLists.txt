@@ -28,8 +28,8 @@ find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 
 # Arquivo de testes
-add_executable(tests tests/tests.cpp src/catalogo.cpp src/pedido.cpp src/produto.cpp)
-target_link_libraries(tests ${GTEST_LIBRARIES} pthread)
+add_executable(tests tests/tests.cpp src/catalogo.cpp src/pedido.cpp src/produto.cpp src/sistema.cpp)
+target_link_libraries(tests gmock ${GTEST_LIBRARIES} pthread)
 
 # Registra os testes
 add_test(NAME Testes COMMAND tests)

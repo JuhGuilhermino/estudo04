@@ -1,6 +1,10 @@
 #include <gtest/gtest.h>
 #include "../src/catalogo.h"  
-#include "../src/pedido.h"   
+#include "../src/pedido.h" 
+#include "../src/sistema.h"
+#include "../src/produto.h"
+
+//TESTES UNITÁRIOS
 
 // Testar a adição de um novo produto ao catálogo
 TEST(catalogo_test, adicionar_produto){
