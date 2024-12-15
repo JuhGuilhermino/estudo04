@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/tests.dir/tests/tests.cpp.o CMakeFiles/tests.dir/src/catalogo.cpp.o CMakeFiles/tests.dir/src/pedido.cpp.o CMakeFiles/tests.dir/src/produto.cpp.o CMakeFiles/tests.dir/src/sistema.cpp.o -o tests  -lgmock /usr/local/lib/libgtest.a -lpthread 
