@@ -1,5 +1,5 @@
 # 📝 Estudo04 - Gerenciador de Produtos
-Sistema simples de gerenciamento de produtos que inclui a manipulação de um catálogo e processamento de pedidos.
+Sistema simples de gerenciamento de produtos que inclui a manipulação de um catálogo e processamento de pedidos. \
 **AUTORA:** [Júlia Guilhermino](https://github.com/JuhGuilhermino).
 
 ---
