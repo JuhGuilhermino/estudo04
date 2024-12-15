@@ -21,7 +21,6 @@ class Pedido{
     private:
         std::vector <Produto> produtos;  //> Carrinho de compras
         std::string nome;                //> Nome do cliente.
-        float total = 0;
 
     public:
         /**
