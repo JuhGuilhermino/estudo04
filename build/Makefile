@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named estudo04
+# Target rules for targets named main
 
 # Build rule for target.
-estudo04: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 estudo04
-.PHONY : estudo04
+main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-estudo04/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/estudo04.dir/build.make CMakeFiles/estudo04.dir/build
-.PHONY : estudo04/fast
+main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
 
 src/catalogo.o: src/catalogo.cpp.o
 .PHONY : src/catalogo.o
 
 # target to build an object file
 src/catalogo.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/estudo04.dir/build.make CMakeFiles/estudo04.dir/src/catalogo.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/catalogo.cpp.o
 .PHONY : src/catalogo.cpp.o
 
 src/catalogo.i: src/catalogo.cpp.i
@@ -142,7 +142,7 @@ src/catalogo.i: src/catalogo.cpp.i
 
 # target to preprocess a source file
 src/catalogo.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/estudo04.dir/build.make CMakeFiles/estudo04.dir/src/catalogo.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/catalogo.cpp.i
 .PHONY : src/catalogo.cpp.i
 
 src/catalogo.s: src/catalogo.cpp.s
@@ -150,7 +150,7 @@ src/catalogo.s: src/catalogo.cpp.s
 
 # target to generate assembly for a file
 src/catalogo.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/estudo04.dir/build.make CMakeFiles/estudo04.dir/src/catalogo.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/catalogo.cpp.s
 .PHONY : src/catalogo.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -158,7 +158,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/estudo04.dir/build.make CMakeFiles/estudo04.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -166,7 +166,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/estudo04.dir/build.make CMakeFiles/estudo04.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -174,7 +174,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/estudo04.dir/build.make CMakeFiles/estudo04.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/pedido.o: src/pedido.cpp.o
@@ -182,7 +182,7 @@ src/pedido.o: src/pedido.cpp.o
 
 # target to build an object file
 src/pedido.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/estudo04.dir/build.make CMakeFiles/estudo04.dir/src/pedido.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/pedido.cpp.o
 .PHONY : src/pedido.cpp.o
 
 src/pedido.i: src/pedido.cpp.i
@@ -190,7 +190,7 @@ src/pedido.i: src/pedido.cpp.i
 
 # target to preprocess a source file
 src/pedido.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/estudo04.dir/build.make CMakeFiles/estudo04.dir/src/pedido.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/pedido.cpp.i
 .PHONY : src/pedido.cpp.i
 
 src/pedido.s: src/pedido.cpp.s
@@ -198,7 +198,7 @@ src/pedido.s: src/pedido.cpp.s
 
 # target to generate assembly for a file
 src/pedido.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/estudo04.dir/build.make CMakeFiles/estudo04.dir/src/pedido.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/pedido.cpp.s
 .PHONY : src/pedido.cpp.s
 
 src/produto.o: src/produto.cpp.o
@@ -206,7 +206,7 @@ src/produto.o: src/produto.cpp.o
 
 # target to build an object file
 src/produto.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/estudo04.dir/build.make CMakeFiles/estudo04.dir/src/produto.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/produto.cpp.o
 .PHONY : src/produto.cpp.o
 
 src/produto.i: src/produto.cpp.i
@@ -214,7 +214,7 @@ src/produto.i: src/produto.cpp.i
 
 # target to preprocess a source file
 src/produto.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/estudo04.dir/build.make CMakeFiles/estudo04.dir/src/produto.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/produto.cpp.i
 .PHONY : src/produto.cpp.i
 
 src/produto.s: src/produto.cpp.s
@@ -222,7 +222,7 @@ src/produto.s: src/produto.cpp.s
 
 # target to generate assembly for a file
 src/produto.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/estudo04.dir/build.make CMakeFiles/estudo04.dir/src/produto.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/produto.cpp.s
 .PHONY : src/produto.cpp.s
 
 src/sistema.o: src/sistema.cpp.o
@@ -230,7 +230,7 @@ src/sistema.o: src/sistema.cpp.o
 
 # target to build an object file
 src/sistema.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/estudo04.dir/build.make CMakeFiles/estudo04.dir/src/sistema.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/sistema.cpp.o
 .PHONY : src/sistema.cpp.o
 
 src/sistema.i: src/sistema.cpp.i
@@ -238,7 +238,7 @@ src/sistema.i: src/sistema.cpp.i
 
 # target to preprocess a source file
 src/sistema.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/estudo04.dir/build.make CMakeFiles/estudo04.dir/src/sistema.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/sistema.cpp.i
 .PHONY : src/sistema.cpp.i
 
 src/sistema.s: src/sistema.cpp.s
@@ -246,7 +246,7 @@ src/sistema.s: src/sistema.cpp.s
 
 # target to generate assembly for a file
 src/sistema.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/estudo04.dir/build.make CMakeFiles/estudo04.dir/src/sistema.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/sistema.cpp.s
 .PHONY : src/sistema.cpp.s
 
 # Help Target
@@ -257,7 +257,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... estudo04"
+	@echo "... main"
 	@echo "... src/catalogo.o"
 	@echo "... src/catalogo.i"
 	@echo "... src/catalogo.s"

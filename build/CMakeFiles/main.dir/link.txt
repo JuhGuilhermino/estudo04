@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/main.dir/src/catalogo.cpp.o CMakeFiles/main.dir/src/main.cpp.o CMakeFiles/main.dir/src/pedido.cpp.o CMakeFiles/main.dir/src/produto.cpp.o CMakeFiles/main.dir/src/sistema.cpp.o -o main 

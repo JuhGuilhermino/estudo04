@@ -21,8 +21,18 @@ void Sistema::process_events(){
             std::cin >> preco;
         }
     } else if (estado == estados::MENU){
-        std::cout << "Digite:\n 0 - Adicionar itens ao pedido.\n 1 - Finalizar pedido. \n 2 - Cancelar pedido. \n>>>    ";
+        std::cout << "\nDigite:\n 0 - Adicionar itens ao pedido.\n 1 - Finalizar pedido. \n 2 - Cancelar pedido. \n>>>    ";
         std::cin >> operacao;
+    } else if (estado == estados::COMPRAR){
+        std::cout << "\nDigite o ID do produto que deseja adcionar ao pedido >>>    ";
+        std::cin >> id_produto;
+
+    } else if (estado == estados::FINALIZAR){
+        std::cout << "Digite:\n 0 - Para finalizar compra.\n 1 - Continuar comprando \n>>>    ";
+        std::cin >> comprar;
+
+    } else if (estado == estados::SAIR){
+        // Não faz nada
     }
 }
 
@@ -53,19 +63,40 @@ void Sistema::update(){
         }
 
     } else if (estado == estados::MENU){
+        // Atualiza estado conforme a operacao
         if (operacao == 0){
-            //estado = estados::COMPRAR;
-            std::cout << "Comprar \n";
-            estado = estados::SAIR;
+            estado = estados::COMPRAR;
+            
         } else if (operacao == 1){
-            //estado = estados::FINALIZAR;
-            std::cout << "Finalizar compra \n";
-            estado = estados::SAIR;
+            estado = estados::FINALIZAR;
+            
         } else if (operacao == 2){
             //estado = estados::CANCELAR;
             std::cout << "Cancelar \n";
             estado = estados::SAIR;
         } 
+
+    } else if (estado == estados::COMPRAR){
+        // Adiciona produto ao pedido
+        pedido.adicionar_produto(catalogo.buscar_produto(id_produto));
+
+        // Atualiza o estado
+        estado = estados::MENU;
+
+    } else if (estado == estados::FINALIZAR){
+        if (comprar == 0) {
+            // Exibe mensagem de compra
+            std::cout << "Compra realizada com sucesso! \n";
+
+            // Limpa vetor de pedidos
+            pedido.limpar_produtos();
+
+            // Muda o estado para MENU
+            estado = estados::MENU;
+
+        } else if (comprar == 1) {
+            estado = estados::COMPRAR;
+        }
 
     } else if (estado == estados::SAIR){
         sair = true;
@@ -97,11 +128,24 @@ void Sistema::render(){
         std::cout << "TOTAL: R$ ";
         if (pedido.qtd_itens() > 0) {
             std::cout << pedido.calcular_total() << "\n";
-            pedido.listar_produtos();
         } else {
             std::cout << " 0.0\n";
         } 
         
+
+    } else if (estado == estados::COMPRAR){
+        // Exibir catálogo de produtos
+        std::cout << "\n\n>> CATÁLOGO <<\nID - NOME - PREÇO\n";
+        catalogo.listar_produtos();
+
+    } else if (estado == estados::FINALIZAR){
+        std::cout << "---------------------------------------------------------------------------------\n";
+        std::cout << "TOTAL: R$ ";
+        if (pedido.qtd_itens() > 0) {
+            std::cout << pedido.calcular_total() << "\n";
+        } else {
+            std::cout << " 0.0\n";
+        }
 
     } else if (estado == estados::SAIR){
         // Não faz nada

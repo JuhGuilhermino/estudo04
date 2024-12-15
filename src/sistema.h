@@ -42,6 +42,8 @@ class Sistema{
         std::string nome_produto;     //> Nome do novo produto.
         float preco;                  //> Preco do novo produto.
         int qtd_novos_produtos = 0;   //> Quantidade de produtos adicinados ao catálogo em um acesso do adm.
+        int id_produto;               
+        int comprar; 
 
 
         bool sair = false;            //> Gatilho para encerrar o loop.

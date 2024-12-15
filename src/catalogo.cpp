@@ -3,7 +3,10 @@
 Catalogo::Catalogo(){}
 
 void Catalogo::adicionar_produto(std::string nome, float preco){
-    int novo_id = catalogo.size()-1;             //ID = indice do produto no vetor catalogo
+    // Calcula o ID do novo produto
+    int novo_id = catalogo.size();
+    
+    // Adciona produto ao catalogo
     Produto new_produto(novo_id, nome, preco);
     catalogo.push_back(new_produto);
 }

@@ -20,4 +20,4 @@ file(GLOB SOURCES
 include_directories(${SRC_DIR})
 
 # Criar o executável a partir dos arquivos de origem
-add_executable(estudo04 ${SOURCES})
+add_executable(main ${SOURCES})

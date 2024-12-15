@@ -49,8 +49,18 @@ class Pedido{
          */
         float calcular_total();
 
-
+        /**
+         * @brief Retorna a quantidade de produtos da lista de pedidos
+         * 
+         * @return int 
+         */
         int qtd_itens();
+
+        /**
+         * @brief Limpa o vetor de produtos
+         * 
+         */
+        void limpar_produtos();
 };
 
 #endif

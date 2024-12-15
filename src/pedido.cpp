@@ -23,3 +23,7 @@ float Pedido::calcular_total(){
 int Pedido::qtd_itens(){
     return produtos.size();
 }
+
+void Pedido::limpar_produtos(){
+    produtos.clear();
+}

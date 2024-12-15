@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/estudo04.dir/src/catalogo.cpp.o CMakeFiles/estudo04.dir/src/main.cpp.o CMakeFiles/estudo04.dir/src/pedido.cpp.o CMakeFiles/estudo04.dir/src/produto.cpp.o CMakeFiles/estudo04.dir/src/sistema.cpp.o -o estudo04 
